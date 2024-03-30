@@ -13,7 +13,7 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "Gz\\TpAuth\\core\\handle"
+            "Gz\\TpAuth\\core\\Core::handle"
         ]
     },
     "minimum-stability": "dev",
