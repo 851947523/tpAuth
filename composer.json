@@ -11,9 +11,11 @@
             "Gz\\TpAuth\\": "src/"
         }
     },
-    "post-install-cmd": [
-        "Gz\\TpAuth\\core\\handle"
-    ],
+    "scripts": {
+        "post-install-cmd": [
+            "Gz\\TpAuth\\core\\handle"
+        ]
+    },
     "minimum-stability": "dev",
     "require": {}
 }
