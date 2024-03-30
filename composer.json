@@ -9,9 +9,11 @@
     "autoload": {
         "psr-4": {
             "Gz\\TpAuth\\": "src/"
-        },
-        "files": ["src/autoload.php"]
+        }
     },
+    "post-install-cmd": [
+        "Gz\\TpAuth\\core\\handle"
+    ],
     "minimum-stability": "dev",
     "require": {}
 }
