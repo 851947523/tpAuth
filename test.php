@@ -3,3 +3,4 @@ require_once './vendor/autoload.php';
 
 
 
+\Gz\TpAuth\core\load::createFile();
