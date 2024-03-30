@@ -12,7 +12,7 @@ class Core
      * @return void
      */
     public static function handle(){
-        $rootPath = \think\facade\App::getRootPath();
+        $rootPath = app()->getRootPath();
         $toFile = $rootPath.'/config/auth.php';
         $fromFile = __DIR__.'/../config/auth.php';
         if (!file_exists($fromFile)) {
