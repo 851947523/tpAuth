@@ -3,7 +3,9 @@
 namespace Gz\TpAuth\core;
 
 
+use Gz\TpAuth\consts\cachePre\AuthRules;
 use Gz\TpCommon\exception\Error;
+use Gz\TpCommon\lib\redis\Redis;
 use Gz\Utools\Instance\Instance;
 use Composer\Composer;
 
@@ -103,4 +105,17 @@ abstract class  Core
         return $rulesArr;
     }
 
+
+    //获取['admin-mudule-index'...]
+    protected function getRuleName($uid)
+    {
+        $ruleName = Redis::get(AuthRules::getAuthRuleNamePreCacheById($uid));
+        return $ruleName;
+    }
+    protected function setRuleName($data)
+    {
+        $uid = $this->getUid();
+        Redis::tag($this->_config['cache_tag'])
+            ->set(AuthRules::getAuthRuleNamePreCacheById($uid),$data,$this->_config['cache_expire']);
+    }
 }
