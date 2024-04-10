@@ -1,6 +1,3 @@
 <?php
 require_once './vendor/autoload.php';
-
-
-
-\Gz\TpAuth\core\load::createFile();
+\Gz\TpAuth\core\Core::handle();
