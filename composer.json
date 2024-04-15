@@ -1,0 +1,35 @@
+{
+    "name": "gz/tp-auth",
+    "authors": [
+        {
+            "name": "gaozhe",
+            "email": "851947523@qq.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Gz\\TpAuth\\": "src/"
+        }
+    },
+
+    "scripts": {
+        "post-install-cmd": [
+            "php bin/console cache:clear"
+        ]
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=8.2",
+        "topthink/think-migration": "^3.1",
+        "gz/tp-common": "dev-main"
+    },
+    "extra": {
+        "think": {
+            "config": {
+                "auth": "src/config/auth.php"
+            }
+        },
+        "class": "Gz\\TpAuth\\core\\Core"
+
+    }
+}
